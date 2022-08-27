@@ -2,7 +2,7 @@
 <html>
 <body>
   <script>
-    websocket = new WebSocket('wss://ctf02.root-me.org/ws');
+    websocket = new WebSocket('ws://ctf02.root-me.org/ws');
     websocket.onopen = start
     websocket.onmessage = handleReply
     function start(event) {
