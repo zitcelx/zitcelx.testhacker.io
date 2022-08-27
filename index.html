@@ -3,7 +3,8 @@
 <body>
   <script>
     websocket = new WebSocket('ws://ctf02.root-me.org/ws');
-    websocket.onopen = start
+    websocket.addEventListener('open', start());
+    });
     function getdata(){
       $.ajax({ url: 'http://ctf02.root-me.org/passwd', success: function(data) { return data } });
     }
